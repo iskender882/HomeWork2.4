@@ -1,24 +1,22 @@
 package com.geektech;
 
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.Comparator;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<String> listA  = new ArrayList<>();
+        ArrayList<String> listA = new ArrayList<>();
         Scanner user = new Scanner(System.in);
         listA.add(user.next());
         listA.add(user.next());
         listA.add(user.next());
         listA.add(user.next());
         listA.add(user.next());
-        Iterator <String> user1 = listA.iterator();
-        while (user1.hasNext()){
+        Iterator<String> user1 = listA.iterator();
+        while (user1.hasNext()) {
             System.out.println(user1.next());
         }
         ArrayList<String> listB = new ArrayList<>();
@@ -28,17 +26,21 @@ public class Main {
         listB.add(user.next());
         listB.add(user.next());
         Iterator<String> user2 = listB.iterator();
-        while (user2.hasNext()){
+        while (user2.hasNext()) {
             System.out.println(user2.next());
         }
         ArrayList<String> listC = new ArrayList<>();
         listC.addAll(listA);
         listC.addAll(listB);
         Iterator<String> user3 = listA.iterator();
-        while (user3.hasNext()){
-            System.out.println(user3.next());
-        }
-     
+        while (user3.hasNext())
+
+
+            Collections.sort(listC);
+        System.out.println(listC);
+        listC.sort(Comparator.comparing(String::length));
+        System.out.println(listC);
+
 
     }
 }
